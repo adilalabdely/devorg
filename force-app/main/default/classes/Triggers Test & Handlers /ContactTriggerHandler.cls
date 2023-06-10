@@ -25,6 +25,9 @@ public class ContactTriggerHandler {
                  //old contact leadsource != new contact lead source
              Contact oldContact = cTriggerOldMap.get(newContact.id);
              if (newContact.leadsource != oldContact.LeadSource) {
+                //how to access custom label in apex?
+                    //system.label.labelName
+                    newContact.LeadSource.addError(System.label.ContactValidation2);
                  newContact.LeadSource.addError('Cannot update lead source! Please user. Behave! ');
              }
          }
