@@ -30,4 +30,6 @@ public class SetDemo {
         s1.addAll(l1);
         System.debug(s1);
     }
+
+
 }

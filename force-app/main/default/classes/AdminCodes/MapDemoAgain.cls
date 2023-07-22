@@ -63,46 +63,4 @@ public class MapDemoAgain {
         map2.putAll(map1);
         system.debug(map2);
     }
-
-
-    public static void printMap4() {
-        map<integer, string> map1 = new map<integer, string>();
-        map1.put(1011, 'Alex');//
-        map1.put(1022, 'Brian');
-        map1.put(1033, 'Monica');
-        map1.put(1011, 'Amar');//Amar will be update instead of Alex. NO ALEX in map. 
-        map1.put(1055, 'Monica');
-
-        //print follow for every key-value pair
-            //rollNo is 1011, student name is 'Amar'
-            //rollNo is 1022, student name is 'Brian'
-            //rollNo is 1033, student name is 'Monica'
-        
-        //FOR each loop. 
-        //There is no for each loop for MAP directly.
-        set<integer> allRollNo = map1.keySet();
-        //{1011,1022,1033,1055}
-
-        for (integer rollNo : allRollNo) {
-            //system.debug(rollNo);
-            string s11 = map1.get(rollNo);
-            system.debug('roll No is ' + rollNo + ', studnet name is ' + s11);
-        }
-    }
-
-    public static void printMap5(){
-        list<string> l1 = new list<string>{'Alex','Benjamin'};
-        list<string> l2 = new list<string>{'John', 'Jane'};
-        list<string> l3 = new list<string>{'David', 'Peter'};
-
-
-        //map of department -> all members in it
-        map<string, list<string>> map99 = new map<string, list<string>>();
-
-        map99.put('IT', l1);
-        map99.put('Sales', l2);
-        map99.put('Service', l3);
-
-        system.debug(map99);
-    }
 }

@@ -1,9 +1,9 @@
 public class MethodsDemo {
     //return type is mandatory.
     public void welcomeMessage(){
-        system.debug('Hi there, welcome to the world');   
+        system.debug('Hi there, welcome to the world');
+        
     }
-    
     //print dynamic message
     //parameter -> string datatype
     public void samplePrintMessage(string m){

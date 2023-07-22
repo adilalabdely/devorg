@@ -88,6 +88,8 @@ public class DmlDemo16 {
         c.accountid = accountid;
         insert c;
     }
+
+
     //Create one employee for latest created department
         //assume I have one department record.
         //I call this method.

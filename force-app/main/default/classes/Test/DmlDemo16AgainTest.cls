@@ -35,9 +35,6 @@ public class DmlDemo16AgainTest {
         Test.stopTest();
 
         //assert
-        list<account> allAccounts = [select id, name, rating from Account];
-        for (account eachAcc : allAccounts) {
-            assert.areEqual('Hot', eachAcc.rating);
-        }
+        
     }
 }

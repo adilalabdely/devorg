@@ -11,8 +11,8 @@ public class Calculator16 {
     //return type is NOT differenciator
     public void add(decimal a, decimal b){
         system.debug(a+b);
-    } 
-  
+    }
+
     public integer add(integer x, integer y, integer z){
         return (x+y+z);
     }

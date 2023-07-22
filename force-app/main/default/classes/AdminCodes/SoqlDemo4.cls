@@ -16,45 +16,12 @@ public class SoqlDemo4 {
     }
 
     public static void queryExample22() {
-        account acc = [select id, name, website from account limit 1];
-        system.debug(acc);
-
+        account acc = [select id, name from account limit 1];
+        system.debug('acc name is ' + acc.get('name'));//this is dynamic
+        system.debug('acc name is ' + acc.Name);//this is not dynamic
 
         //list<integer> listName;
         //listName.get(3)
         //listName[3]
-    }
-
-    //prepare the query as a string
-        //pass comma separated field names
-    public static void accDynamicSoql1(string fieldNames) {
-
-        string query = 'select ';
-        query += fieldNames;
-        query += ' from account';
-
-        system.debug('FINAL QUERY IS ::: ' + query);
-        list<account> listAcc = database.query(query);
-        for (account acc : listAcc) {
-            system.debug(acc);
-        }
-    }
-
-    public static void empSOQL() {
-        //fields are hardcoded
-        list<employee__c> listEmp = [select id, first_name__c, last_name__c from employee__c];
-    }
-
-    public static void empDynamicSOQL(string empFields) {
-        string q = 'select ';
-        q += empFields;
-        q += ' from employee__c';
-        
-        system.debug('final query is ==> ' + q);
-
-        list<employee__c> listEmp = database.query(q);
-        for (employee__c eachEmp : listEmp) {
-            system.debug(' employee ' + eachEmp);
-        }
     }
 }

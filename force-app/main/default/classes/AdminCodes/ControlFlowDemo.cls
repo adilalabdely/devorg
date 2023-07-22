@@ -5,14 +5,13 @@ public class ControlFlowDemo {
             //for more than one statement brackets are mandatory
             system.debug(a +' is bigger than ' + b);
             system.debug('b is smaller than a');
-        } else if (b > a) {
+        } else if(b > a) {
             system.debug('b is bigger than a');
             system.debug('a is smaller than b');
         } else {
             system.debug('a and b are equal');
         }
    }
-
    public void checkBigger1(integer a, integer b){
         //if only one statement brackets are optional
         if (a > b) 

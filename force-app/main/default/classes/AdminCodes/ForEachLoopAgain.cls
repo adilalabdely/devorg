@@ -38,7 +38,6 @@ public class ForEachLoopAgain {
             if (len >= 8) {
                 c2.add(eachCountry);
             }
-
         }
         system.debug('c2 is ' + c2);
    }

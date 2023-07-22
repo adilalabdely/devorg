@@ -1,28 +1,35 @@
 public class ContactTriggerHandler {
-    public static void mainContactPerson(list<contact> newContacts, map<id, contact> oldContacts) {
-        //set id
-
-        map<id, string> accountIdsFax = new map <id, string>();
-        //for loop
-        for (contact updatedContacts : newContacts) {
-            
-            Contact oldContact = oldContacts.get(updatedContacts.id);
-            //check if main person is checked
-
-            if (updatedContacts.main_contact_person__c == true && updatedContacts.main_contact_person__c != oldContact.main_contact_person__c) {
-                    
-            accountIdsFax.put(updatedContacts.AccountId, updatedContacts.Fax);
-            }
-        }
-        //fetch the records with main contact checked
-        list<account> updatedContacts = [select id, name, fax from Account where id = :accountIdsFax.keySet()];
-
-        //update account's fax field
-        for (Account eachAcc : updatedContacts) {
-            eachAcc.Fax = accountIdsFax.get(eachacc.id);
-        }
-
-        //update acc with contact fax fields
-        update updatedContacts;
+    public static void validate1(List<contact> cTriggerNew, List<contact> cTriggerOld, Map<id, contact> cTriggerNewmap, map<id, contact> cTriggerOldMap) {
+         //validate.
+         //if leadsource is ALREADY partner referral, then DON't ALLOW user to update record.
+ 
+         //addError method to add validation or throw error in trigger.
+             //we can use addError method in ONE record of trigger.new or trigger.newMap
+             //we cannot use addError method on trigger.old or trigger.oldMap
+         
+         for (Contact newContact : cTriggerNew) {
+             //if old leadsource is partner referral.
+             Contact oldContact = cTriggerOldMap.get(newContact.Id);
+             if (oldContact.leadsource == 'Partner Referral') {
+                 newContact.addError('Cannot update contact if lead source is partner referral');
+             }
+ 
+         }
     }
-}
+    public static void validate2(List<contact> cTriggerNew, List<contact> cTriggerOld, Map<id, contact> cTriggerNewmap, map<id, contact> cTriggerOldMap) {
+         //validate
+         //DO NOT ALLOW USER to update LeadSource field.
+         for (contact newContact : cTriggerNew) {
+             //validate if lead source is updated.
+             //how to check if lead source is updated?
+                 //old contact leadsource != new contact lead source
+             Contact oldContact = cTriggerOldMap.get(newContact.id);
+             if (newContact.leadsource != oldContact.LeadSource) {
+                //how to access custom label in apex?
+                    //system.label.labelName
+                    newContact.LeadSource.addError(System.label.ContactValidation2);
+                 newContact.LeadSource.addError('Cannot update lead source! Please user. Behave! ');
+             }
+         }
+    }
+ }

@@ -15,6 +15,12 @@ public class LoopDemo {
              system.debug(i);
              i++;
          }
+         system.debug('after while i ==> ' + i);//what will be value of i?
+         system.debug('after while i ==> ' + i);//what will be value of i?
+         i++;
+         system.debug('after while i ==> ' + i);//what will be value of i?
+         system.debug('after while i ==> ' + i);//what will be value of i?
+         system.debug('after while i ==> ' + i);//what will be value of i?
     }
  
     //print hello 10 times
@@ -49,16 +55,14 @@ public class LoopDemo {
         }
         system.debug(printN);
     }
-    //print n odd numbers
-    //1 3 5 ....
+
     public void printOddNumbers(integer startInt, integer endInt){
         for (Integer i = startInt; i < endInt; i++) {
             integer remainder = math.mod(i, 2);
             if (remainder == 1){
                 System.debug(i);
-            }        
+            }
+            
         }
     }
-
-
  }

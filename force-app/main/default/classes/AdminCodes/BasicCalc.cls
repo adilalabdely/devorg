@@ -5,7 +5,7 @@ public class BasicCalc {
     }
 
     public decimal average (integer x, integer y){
-        decimal average = add(x + y) /2;
+        decimal average = (x + y) /2;
         return average;
     }
 
