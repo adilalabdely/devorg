@@ -1,0 +1,6 @@
+.error-message {
+    background: #dd4848;
+    color: var(--lwc-brandHeader, #FFFFFF);
+    padding: var(--lwc-varSpacingSmall, spacingSmall);
+    border-radius: var(--lwc-spacingSmall, 0.75rem);
+}

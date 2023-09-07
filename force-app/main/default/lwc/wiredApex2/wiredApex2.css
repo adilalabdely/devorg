@@ -1,0 +1,21 @@
+.box-style {
+    border-radius: var(--lwc-spacingSmall, 0.75rem);
+    border-style: solid;
+    animation: glow-box-blue 1s ease infinite;
+    padding: 7px;
+    background-color: rgb(244, 236, 236);
+}
+@keyframes glow-box-blue {
+    0% {
+        border-color: #1b96ff;
+        box-shadow: 0 0 5px #1b96ff;
+    }
+    50% {
+        border-color: #1b96ff;
+        box-shadow: 0 0 12px #1b96ff;
+    }
+    100% {
+        border-color: #1b96ff;
+        box-shadow: 0 0 5px #1b96ff;
+    }
+}

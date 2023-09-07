@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title = "Event Bubbling" icon-name="standard:ai_accelerator_card">
+        <div class="slds-var-m-around_medium">
+            <div> This is grand parent component</div>
+            <img src="https://media.whas11.com/assets/WHAS/images/592325876/592325876_1140x641.jpg">
+            <c-parent-comp
+                onshow={showHandler}>
+            </c-parent-comp>
+        </div>
+    </lightning-card>
+</template>

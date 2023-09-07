@@ -1,0 +1,6 @@
+.section-header{
+    background-color: rgb(9, 115, 115);
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: var(--lwc-varSpacingXxSmall, spacingXxSmall);
+}
